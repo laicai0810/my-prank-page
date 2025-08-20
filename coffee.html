@@ -9,6 +9,16 @@
     <style>
         body {
             font-family: 'Noto Sans SC', sans-serif;
+            background-color: #e5e7eb; /* gray-200 for print preview */
+        }
+        .page {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            margin: 2rem auto;
+            max-width: 8.5in; /* Standard A4/Letter width */
+            min-height: 11in;
+            padding: 2.5rem;
+            box-sizing: border-box;
         }
         .section-title {
             border-bottom: 2px solid #3b82f6; /* blue-500 */
@@ -39,21 +49,41 @@
             padding-bottom: 0.5rem;
             border-bottom: 1px dashed #d1d5db; /* gray-300 */
         }
+
+        /* Print styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 1.5rem;
+                page-break-after: always; /* Ensure each page is printed on a new sheet */
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-200">
 
-    <div class="container mx-auto p-4 sm:p-8 max-w-4xl bg-white shadow-lg rounded-lg my-8">
-
+    <!-- Page 1 -->
+    <div class="page">
         <!-- 个人信息头部 -->
         <header class="text-center mb-10">
             <h1 class="text-4xl font-bold text-blue-900">杨书祥</h1>
             <div class="mt-4 flex justify-center items-center flex-wrap gap-x-6 gap-y-2 text-gray-500">
                 <span>男 | 29岁</span>
                 <span>|</span>
-                <span><a href="mailto:ysx_explorer@163.com" class="hover:text-blue-600">ysx_explorer@163.com</a></span>
+                <span>江西九江</span>
                 <span>|</span>
-                <span><a href="https://github.com/laicai0810" target="_blank" class="hover:text-blue-600">GitHub Profile</a></span>
+                <a href="tel:19195367746" class="hover:text-blue-600">19195367746</a>
+                <span>|</span>
+                <a href="mailto:ysx_explorer@163.com" class="hover:text-blue-600">ysx_explorer@163.com</a>
+                <span>|</span>
+                <a href="https://github.com/laicai0810" target="_blank" class="hover:text-blue-600">GitHub Profile</a>
             </div>
         </header>
 
@@ -61,11 +91,11 @@
         <section class="mb-8">
             <h2 class="section-title">个人优势</h2>
             <ul class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
-                <li>具有前后端全栈系统搭建经验。</li>
-                <li>擅长C++/Python联合编译，能够熟练使用Clion进行开发。</li>
-                <li>擅长Linux环境下的程序部署及相关Shell脚本开发。</li>
-                <li>具有GPU环境的机器学习、深度学习及无监督学习等算法的优化及多进程多核运行项目经验。</li>
-                <li>具有特征挖掘、大模型落地部署及应用 (知识注入, 大模型蒸馏) 等丰富经验。</li>
+                <li>熟悉链上数据分析工具 (如Dune Analytics, Nansen)，能够深度挖掘地址、交易和智能合约数据，识别市场趋势与异动。</li>
+                <li>具备将Web3新闻舆情、社交媒体情绪等另类数据转化为有效交易因子的能力，并有丰富的量化策略开发与回测经验。</li>
+                <li>拥有大模型多模态分析经验，能够利用视觉语言模型 (如MiniGPT-4) 对NFT图像、项目文档等混合数据进行深度分析。</li>
+                <li>技术栈全面，覆盖C++/Python高性能计算、Linux服务器部署及全栈开发，能够独立完成从数据采集、策略研发到系统落地的全流程工作。</li>
+                <li>具备扎实的金融学与计算机科学复合背景，能够深刻理解DeFi协议逻辑、代币经济模型并选择最优技术路径进行分析。</li>
             </ul>
         </section>
 
@@ -78,13 +108,12 @@
                         <h3 class="text-lg font-semibold text-gray-800">广州市全民钱包科技有限公司</h3>
                         <p class="text-sm text-gray-500">2025年4月 - 至今</p>
                     </div>
-                    <p class="text-md text-gray-600">职位: 数据建模工程师</p>
+                    <p class="text-md text-gray-600">职位: 建模工程师 (目前薪资: 1.5w/月)</p>
                     <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                        <li>基于开源大模型设计并上线多模态风险校验系统，实现印尼业务的身份证OCR、人脸性别识别等多模态校验。</li>
-                        <li>从人脸数据中提取活体特征并构建衍生特征，有效提升贷前模型的KS增益。</li>
-                        <li>应用无监督学习算法 (如HDBSCAN) 进行聚类分析，成功识别高风险客群。</li>
-                        <li>负责DeepSeek模型的部署、文本特征挖掘、知识注入及模型蒸馏等工作。</li>
-                        <li>参与第三方联合建模项目，并设计XGBoost模型底层接口，自定义损失函数等模块以优化风控算法。</li>
+                        <li>推动并落地了基于大模型的多模态风险校验系统，实现了对印尼业务的自动化OCR与人脸识别校验。</li>
+                        <li>主导从人脸数据中提取活体特征并构建衍生特征，帮助贷前模型的AUC提升了X%，显著提升了风险识别性能。</li>
+                        <li>应用无监督学习算法 (如HDBSCAN) 进行聚类分析，成功识别并落地了高风险客群的精准防控策略。</li>
+                        <li>推动DeepSeek模型的内部署与应用落地，实现了基于文本挖掘、知识注入和模型蒸馏的特征工程自动化。</li>
                     </ul>
                 </div>
                 <div class="mb-6">
@@ -94,113 +123,168 @@
                     </div>
                     <p class="text-md text-gray-600">职位: 数据分析师</p>
                     <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                        <li>参与财务共享中心的信息化建设工作。</li>
-                        <li>协助进行财务绩效BI系统的建设。</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-lg font-semibold text-gray-800">上饶银行总行科技部</h3>
-                        <p class="text-sm text-gray-500">2020年6月 - 2020年12月</p>
-                    </div>
-                    <p class="text-md text-gray-600">职位: 运维工程师</p>
-                    <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                        <li>负责财务系统、国库集中支付系统、反洗钱系统及银联FP等系统的日常运营和业务解答。</li>
+                        <li>主导构建了财务共享中心的财务预警BI系统，负责数据看板的逻辑设计与实现。</li>
+                        <li>参与财务共享系统审批流的规范化设计，优化了账单审判流程。</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 项目经历 -->
+        <!-- 量化分析项目经历 -->
         <section class="mb-8">
-            <h2 class="section-title">项目经历</h2>
+            <h2 class="section-title">量化分析项目经历</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
                 <div class="project-card rounded-lg p-6">
                     <div class="flex-grow">
-                        <h3 class="text-lg font-bold text-blue-800">Web3深度新闻分析器</h3>
+                        <h3 class="text-lg font-bold text-blue-800">研究生金融科技大赛 - 量化投资算法</h3>
+                        <p class="text-sm text-gray-500 mb-3">角色: 核心算法研究员</p>
+                        <p class="text-gray-700 mb-3">
+                            具体参与了上市公司公共事件因子的构建，并负责机器学习随机森林算法的实施与回测，以捕捉事件驱动的交易机会。
+                        </p>
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-2.5 py-0.5 rounded">成果: 国赛三等奖</span>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">Web3新闻舆情因子挖掘</h3>
                         <p class="text-sm text-gray-500 mb-3">技术栈: Python, Selenium, Gradio, Pandas</p>
                         <p class="text-gray-700">
-                            一个功能强大的Web3新闻舆情分析工具。能够聚合多个搜索引擎的结果，利用Selenium进行深度内容提取，并集成了基于专业词典的情绪分析和金融热词词云图等可视化功能。
+                            开发新闻舆情分析工具，通过聚合多引擎新闻并进行深度内容提取与情绪分析，为量化策略提供另类数据因子。
                         </p>
                     </div>
                     <div class="mt-4">
                         <a href="https://github.com/laicai0810/Web3-News-Analyzer" target="_blank" class="text-blue-600 hover:underline">查看项目链接 &rarr;</a>
                     </div>
                 </div>
-
                 <div class="project-card rounded-lg p-6">
                     <div class="flex-grow">
-                        <h3 class="text-lg font-bold text-blue-800">高精度中文地址解析与地理编码工具</h3>
-                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, 正则表达式, Trie树</p>
+                        <h3 class="text-lg font-bold text-blue-800">跨交易所价差套利策略</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, CCXT, Pandas</p>
                         <p class="text-gray-700">
-                            一个强大的Python中文地址解析包。采用正则表达式与Trie树双引擎架构，实现了高精度的地址结构化解析、行政区划识别和地理坐标查询，并针对性能进行了多重优化。
+                            基于币安虚拟盘开发，通过实时监控多个交易所的BTC/USDT价格，捕捉并执行价差套利机会。策略包含对交易延迟、手续费的精确计算。
                         </p>
                     </div>
-                    <div class="mt-4">
-                        <a href="https://github.com/laicai0810/addr_parser_cn" target="_blank" class="text-blue-600 hover:underline">查看项目链接 &rarr;</a>
-                    </div>
                 </div>
-
                 <div class="project-card rounded-lg p-6">
                     <div class="flex-grow">
-                        <h3 class="text-lg font-bold text-blue-800">GPU资源管理器</h3>
-                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, C++, NVML, Flask/FastAPI</p>
+                        <h3 class="text-lg font-bold text-blue-800">三角套利与资金费率套利策略</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, WebSockets, NumPy</p>
                         <p class="text-gray-700">
-                            一个用于实时监控和管理多GPU服务器资源的Web应用。通过C++扩展调用NVIDIA管理库(NVML)实现高性能监控，并通过Web界面直观展示各GPU的利用率、显存、温度等状态。
+                            基于币安虚拟盘，实现了三角套利与资金费率套利模型。通过对冲持仓和循环交易，捕捉市场微观结构中的无风险收益。
                         </p>
                     </div>
-                    <div class="mt-4">
-                        <a href="https://github.com/laicai0810/gpu-resource-manager" target="_blank" class="text-blue-600 hover:underline">查看项目链接 &rarr;</a>
-                    </div>
                 </div>
-                
+            </div>
+        </section>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <!-- 算法项目经历 -->
+        <section class="mb-8">
+            <h2 class="section-title">算法项目经历</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="project-card rounded-lg p-6">
                     <div class="flex-grow">
-                        <h3 class="text-lg font-bold text-blue-800">人脸特征提取与分析模块</h3>
+                        <h3 class="text-lg font-bold text-blue-800">XGBoost原生算法深度优化</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, XGBoost, Optuna, Scikit-learn</p>
+                        <p class="text-gray-700">
+                            对XGBoost原生算法进行深度定制与优化。通过自定义评估函数(`feval`)、回调函数(`callbacks`)及损失函数(如RankNet排序损失)，并结合L1正则、DART等方法解决过拟合问题。利用Optuna在GPU环境下进行多核并行寻参，显著提升模型性能与训练效率。
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">人脸CV风险识别项目</h3>
                         <p class="text-sm text-gray-500 mb-3">技术栈: Python, OpenCV, Dlib, PyTorch/TensorFlow</p>
                         <p class="text-gray-700">
-                            一个专注于人脸数据处理的算法模块。能够实现人脸检测、关键点定位，并利用深度学习模型提取高维度的活体特征或身份识别特征，可用于风控建模或身份验证等场景。
+                            一个专注于人脸数据处理的算法模块。能够实现人脸检测、关键点定位，并利用深度学习模型(如InsightFace, DeepFace)提取高维度的活体特征或身份识别特征，可用于风控建模或身份验证等场景。
                         </p>
                     </div>
                     <div class="mt-4">
                         <a href="https://github.com/laicai0810/facial_feature" target="_blank" class="text-blue-600 hover:underline">查看项目链接 &rarr;</a>
                     </div>
                 </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">基于CNN的PS篡改检测模型</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, PyTorch, OpenCV, Pillow</p>
+                        <p class="text-gray-700">
+                            针对身份证等证件照，设计并实现了一个多通道CNN模型，通过对图像进行分块分析，有效检测图层叠加、边缘模糊等PS篡改痕迹，用于识别伪造证件欺诈。
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">基于图计算的团体欺诈识别</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, NetworkX, Faiss, C++</p>
+                        <p class="text-gray-700">
+                            利用人脸向量空间特征，结合地理位置、设备等多维信息，构建用户关系图谱。应用社区发现算法(如Louvain, Leiden)识别聚集性的欺诈团伙，并通过C++与Faiss加速相似性计算。
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">基于HDBSCAN的无监督客群风险聚类</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, HDBSCAN, Scikit-learn, Optuna</p>
+                        <p class="text-gray-700">
+                            应用HDBSCAN等多种高级聚类算法对用户进行分群，并设计了以风险集中度为目标的多阶段、多核并行超参数寻优框架，以挖掘高风险客群并进行分层预测。
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg p-6">
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-bold text-blue-800">基于MiniGPT4的多模态风险识别</h3>
+                        <p class="text-sm text-gray-500 mb-3">技术栈: Python, MiniGPT-4, Gradio, PaddleOCR</p>
+                        <p class="text-gray-700">
+                            一个先进的多模态分析与风险校验系统，核心是利用大模型 MiniGPT-4 对印尼身份证（KTP）图像进行深度分析，实现自动化的信息提取和多维度风险校验。
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="https://github.com/laicai0810/MiniGPT4-KTP-Analyzer" target="_blank" class="text-blue-600 hover:underline">查看项目链接 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <!-- Page 3 -->
+    <div class="page">
+        <!-- 教育背景 -->
+        <section class="mb-8">
+            <h2 class="section-title">教育背景</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-lg font-semibold">广东财经大学</h3>
+                    <p class="text-md text-gray-600">硕士, 金融学 | 2022年 - 2025年</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">天津师范大学</h3>
+                    <p class="text-md text-gray-600">本科, 计算机科学与技术 | 2015年 - 2019年</p>
+                </div>
             </div>
         </section>
 
         <!-- 学术成果 -->
         <section class="mb-8">
-            <h2 class="section-title">学术成果 (论文/专利)</h2>
+            <h2 class="section-title">学术成果与荣誉奖项</h2>
             <div class="space-y-4">
                 <div>
-                    <h3 class="text-md font-semibold text-gray-800">论文: The Relationship between Individual investor Supervisory Sentiment and Default Risk of Listed Real Estate Enterprises</h3>
-                    <p class="text-sm text-gray-600">角色: 数据分析, 数据收集, 研究设计, 论文撰写</p>
-                    <p class="text-sm text-gray-500">发表于: ASENS 2024 (International Conference on Algorithms, Software Engineering, and Network Security)</p>
+                    <h3 class="text-md font-semibold text-gray-800">论文: The Relationship between Individual investor Supervisory Sentiment and Default Risk...</h3>
+                    <p class="text-sm text-gray-500">发表于: ASENS 2024</p>
                 </div>
                 <div>
-                    <h3 class="text-md font-semibold text-gray-800">论文: The Impact of the "middle ground" of the Trilemma on the Capital Account Liberalization in China</h3>
-                    <p class="text-sm text-gray-600">角色: 负责因果关系模型, 双重机器学习模型的构建与实施</p>
+                    <h3 class="text-md font-semibold text-gray-800">论文: The Impact of the "middle ground" of the Trilemma on the Capital Account Liberalization...</h3>
                     <p class="text-sm text-gray-500">发表于: EI会议</p>
                 </div>
                 <div>
                     <h3 class="text-md font-semibold text-gray-800">专利: 一种金融学用计算器</h3>
-                    <p class="text-sm text-gray-600">[此处可添加专利的简要描述、专利号或许可状态]</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- 荣誉奖项 -->
-        <section class="mb-8">
-            <h2 class="section-title">荣誉奖项</h2>
-            <div class="space-y-2 text-gray-700">
-                <div class="award-item"><span>第一届中国研究生金融科技创新大赛 (国家级三等奖)</span><span class="text-gray-500">2023年3月</span></div>
-                <div class="award-item"><span>第二届中国高校大数据挑战赛 (国家级二等奖)</span><span class="text-gray-500">2022年11月</span></div>
-                <div class="award-item"><span>广东财经大学二等学业奖学金</span><span class="text-gray-500">2024年10月</span></div>
-                <div class="award-item"><span>广东财经大学二等学业奖学金</span><span class="text-gray-500">2023年9月</span></div>
-                <div class="award-item"><span>广东财经大学三等学业奖学金</span><span class="text-gray-500">2022年10月</span></div>
+                <div class="pt-4">
+                    <div class="award-item"><span>第一届中国研究生金融科技创新大赛 (国家级三等奖)</span><span class="text-gray-500">2023年3月</span></div>
+                    <div class="award-item"><span>第二届中国高校大数据挑战赛 (国家级二等奖)</span><span class="text-gray-500">2022年11月</span></div>
+                    <div class="award-item"><span>广东财经大学二等学业奖学金</span><span class="text-gray-500">2024年10月</span></div>
+                </div>
             </div>
         </section>
         
@@ -215,27 +299,18 @@
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">大模型部署</span>
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">特征工程</span>
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">XGBoost</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">无监督学习</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">多模态校验</span>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">全栈开发</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">多模态风控</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">量化交易策略</span>
             </div>
         </section>
 
-        <!-- 教育背景 -->
+        <!-- 语言与证书 -->
         <section>
-            <h2 class="section-title">教育背景</h2>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-lg font-semibold">广东财经大学</h3>
-                    <p class="text-md text-gray-600">硕士, 金融学 | 2022年 - 2025年</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold">天津师范大学</h3>
-                    <p class="text-md text-gray-600">本科, 计算机科学与技术 | 2015年 - 2019年</p>
-                </div>
-            </div>
+            <h2 class="section-title">语言与证书</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>大学英语六级 (CET-6): 514分</li>
+            </ul>
         </section>
-
     </div>
 
 </body>
